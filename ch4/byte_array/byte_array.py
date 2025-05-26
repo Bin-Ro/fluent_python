@@ -1,0 +1,5 @@
+cafe = bytes('cafe', encoding='utf8')
+print(cafe)
+cafe_arr = bytearray(cafe)
+print(cafe_arr)
+print(bytes.fromhex('31 32 33'))
