@@ -1,0 +1,5 @@
+d1 = dict(a=1, b=2, c=3, d=4)
+print(d1)
+print(d1.keys())
+print(d1.values())
+print(d1.items())
