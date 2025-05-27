@@ -3,8 +3,8 @@ import dataclasses
 
 @dataclass
 class Coordinate:
-    lat: float=0
-    lon: float=0
+    lat: float = 0
+    lon: float = 0
 
 moscow = Coordinate(lat=3, lon=2)
 print(moscow)
