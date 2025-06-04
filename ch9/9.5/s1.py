@@ -1,3 +1,4 @@
+from dis import dis
 b = 6
 def f3(a):
     global b
@@ -5,5 +6,13 @@ def f3(a):
     print(b)
     b = 9
 
-f3(3)
-print(b)
+def f1(a):
+    print(a)
+    print(b)
+    b = 9
+
+print('*' * 40)
+dis(f3)
+print('*' * 40)
+dis(f1)
+print('*' * 40)
