@@ -21,6 +21,12 @@ class Vector2d:
     def __bytes__(self):
         return bytes([ord(self.typecode)]) + bytes(array(self.typecode, self))
 
+    @classmethod
+    def frombytes(cls, octets):
+        typecode = chr(octets[0])
+        memv = memoryview(octets[1:]).cast(typecode)
+        return cls(*memv)
+
     def __eq__(self, other):
         return tuple(self) == tuple(other)
 
@@ -43,8 +49,9 @@ print(v1_clone == v1)
 
 print(v1)
 
-octes = bytes(v1)
-print(octes)
+octets = bytes(v1)
+print(octets)
+print(f'Vector2d.frombytes(octets): {repr(Vector2d.frombytes(octets))}')
 
 print(abs(v1))
 
