@@ -58,5 +58,8 @@ class Vector2d:
     def y(self):
         return self.__y
 
+    def __hash__(self):
+        return hash((self.x, self.y))
+
 v1 = Vector2d(3, 4)
-print(v1.x, v1.y)
+print(hash(v1))
