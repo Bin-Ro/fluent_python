@@ -62,4 +62,6 @@ class Vector2d:
         return hash((self.x, self.y))
 
 v1 = Vector2d(3, 4)
-print(hash(v1))
+v2 = Vector2d(3.1, 4.2)
+print(hash(v1), hash(v2))
+print({v1, v2})
