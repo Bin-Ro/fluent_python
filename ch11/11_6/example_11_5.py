@@ -61,7 +61,8 @@ class Vector2d:
     def __hash__(self):
         return hash((self.x, self.y))
 
+    def __complex__(self):
+        return complex(self.x, self.y)
+
 v1 = Vector2d(3, 4)
-v2 = Vector2d(3.1, 4.2)
-print(hash(v1), hash(v2))
-print({v1, v2})
+print(complex(v1))
