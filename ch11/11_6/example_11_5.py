@@ -5,8 +5,8 @@ class Vector2d:
     typecode = 'd'
 
     def __init__(self, x, y):
-        self.x = float(x)
-        self.y = float(y)
+        self.__x = float(x)
+        self.__y = float(y)
 
     def __iter__(self):
         return (i for i in (self.x, self.y))
@@ -50,6 +50,13 @@ class Vector2d:
         compnents = (format(c, fmt_spec) for c in coords)
         return outer_fmt.format(*compnents)
 
+    @property
+    def x(self):
+        return self.__x
+
+    @property
+    def y(self):
+        return self.__y
+
 v1 = Vector2d(3, 4)
-print(format(v1, '.5f'))
-print(format(v1, '.5fp'))
+print(v1.x, v1.y)
